@@ -1,0 +1,30 @@
+.homepage {
+    font-family: "Karla", sans-serif;
+  }
+
+  .section-title {
+    font-family: "Markazi Text", serif;
+    font-size: 40px;
+    text-align: center;
+    margin: 2rem 0;
+    color: #333333;
+  }
+
+  .specials-section,
+  .testimonials-section,
+  .chicago-section {
+    padding: 2rem 1rem;
+  }
+
+  .specials-section {
+    background-color: #edefee;
+  }
+
+  .testimonials-section {
+    background-color: #495e57;
+    color: #edefee;
+  }
+
+  .chicago-section {
+    background-color: #ffffff;
+  }
