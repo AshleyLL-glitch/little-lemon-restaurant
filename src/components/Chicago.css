@@ -1,0 +1,46 @@
+.chicago-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #ffffff;
+    gap: 2rem;
+  }
+
+  .chicago-text {
+    flex: 1;
+  }
+
+  .chicago-title {
+    font-family: "Markazi Text", serif;
+    font-size: 64px;
+    color: #f4ce14;
+    margin: 0;
+  }
+
+  .chicago-subtitle {
+    font-family: "Markazi Text", serif;
+    font-size: 40px;
+    color: #333333;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .chicago-description {
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    color: #333333;
+    line-height: 1.5;
+  }
+
+  .chicago-images {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+  }
+
+  .chicago-image {
+    width: 48%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
