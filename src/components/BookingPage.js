@@ -1,10 +1,17 @@
 import React from "react";
+import BookingForm from "./BookingForm";
+import "./BookingPage.css";
 
-export default function BookingPage() {
+function BookingPage() {
   return (
-    <div>
-      <h1>Booking Page</h1>
-      <p>This is a placeholder for the booking page content.</p>
+    <div className="booking-page">
+      <h1>Book Your Table</h1>
+      <p>
+        Reserve your table at Little Lemon and enjoy a memorable dining experience with your loved ones.
+      </p>
+      <BookingForm />
     </div>
   );
 }
+
+export default BookingPage;
