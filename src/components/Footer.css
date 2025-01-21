@@ -1,0 +1,72 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #edefee;
+    padding: 2rem;
+    gap: 2rem;
+    color: #333333;
+  }
+
+  .footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+  }
+
+  .logo-image {
+    width: 100px;
+    height: auto;
+  }
+
+  .footer-title {
+    font-family: "Markazi Text", serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #495e57;
+  }
+
+  .footer-links {
+    display: flex;
+    flex: 3;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-heading {
+    font-family: "Karla", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-column ul li {
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    color: #333333;
+  }
+
+  .footer-column ul li a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+  }
+
+  .footer-column ul li a:hover {
+    color: #495e57;
+    text-decoration: underline;
+  }

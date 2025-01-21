@@ -3,6 +3,7 @@ import Hero from "./Hero";
 import Specials from "./Specials";
 import CustomersSay from "./CustomersSay";
 import Chicago from "./Chicago";
+import Footer from "./Footer"; // Import the Footer component
 import "./Homepage.css";
 
 function Homepage() {
@@ -27,8 +28,12 @@ function Homepage() {
       <section className="chicago-section">
         <Chicago />
       </section>
+
+      {/* Footer Section */}
+      <Footer />
     </div>
   );
 }
 
 export default Homepage;
+
