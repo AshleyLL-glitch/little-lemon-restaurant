@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./BookingForm.css";
+/* global submitAPI */
 
 function BookingForm({ availableTimes, dispatch }) {
   const [date, setDate] = useState("");
@@ -7,15 +8,22 @@ function BookingForm({ availableTimes, dispatch }) {
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("");
 
-  // Form submission handler
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Reservation confirmed for ${date} at ${time}, ${guests} guests, for ${occasion}.`);
+    const formData = { date, time, guests, occasion };
+    const success = submitAPI(formData);
+    if (success) {
+      alert("Reservation confirmed!");
+    } else {
+      alert("There was an error. Please try again.");
+    }
   };
 
   const handleDateChange = (e) => {
-    setDate(e.target.value);
-    dispatch({ type: "UPDATE_TIMES", payload: e.target.value }); // Trigger the state update
+    const selectedDate = e.target.value;
+    setDate(selectedDate);
+    dispatch({ type: "UPDATE_TIMES", payload: selectedDate });
   };
 
   return (
