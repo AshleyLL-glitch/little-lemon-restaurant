@@ -2,15 +2,14 @@ import React, { useReducer } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./components/Homepage";
 import BookingForm from "./components/BookingForm";
+import ConfirmedBooking from "./components/ConfirmedBooking";
 import Nav from "./components/Nav";
-import { fetchAPI } from "./api";
-
+import { fetchAPI, submitAPI } from "./api";
 
 function initializeTimes() {
   const today = new Date();
   return fetchAPI(today);
 }
-
 
 function updateTimes(state, action) {
   switch (action.type) {
@@ -24,6 +23,20 @@ function updateTimes(state, action) {
 function App() {
   const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
 
+  const submitForm = (formData, navigate) => {
+    try {
+      const success = submitAPI(formData);
+      if (success) {
+        navigate("/confirmed");
+      } else {
+        alert("There was an error. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error during form submission:", error);
+      alert("There was an error. Please try again.");
+    }
+  };
+
   return (
     <Router>
       <Nav />
@@ -34,17 +47,15 @@ function App() {
           element={
             <div>
               <h1>Reserve Your Table</h1>
-              {/* Pass availableTimes and dispatch to BookingForm */}
-              <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
+              <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />
             </div>
           }
         />
+        <Route path="/confirmed" element={<ConfirmedBooking />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
-
-
 

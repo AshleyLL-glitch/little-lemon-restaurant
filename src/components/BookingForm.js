@@ -1,34 +1,29 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./BookingForm.css";
-/* global submitAPI */
 
-function BookingForm({ availableTimes, dispatch }) {
+function BookingForm({ availableTimes, dispatch, submitForm }) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("");
 
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = { date, time, guests, occasion };
-    const success = submitAPI(formData);
-    if (success) {
-      alert("Reservation confirmed!");
-    } else {
-      alert("There was an error. Please try again.");
-    }
+    submitForm(formData, navigate);
   };
 
   const handleDateChange = (e) => {
-    const selectedDate = e.target.value;
-    setDate(selectedDate);
+    const selectedDate = new Date(e.target.value);
+    setDate(e.target.value);
     dispatch({ type: "UPDATE_TIMES", payload: selectedDate });
   };
 
   return (
     <form className="booking-form" onSubmit={handleSubmit}>
-      {/* Date Field */}
       <label htmlFor="res-date">Choose date</label>
       <input
         type="date"
@@ -38,7 +33,6 @@ function BookingForm({ availableTimes, dispatch }) {
         required
       />
 
-      {/* Time Field */}
       <label htmlFor="res-time">Choose time</label>
       <select
         id="res-time"
@@ -47,14 +41,17 @@ function BookingForm({ availableTimes, dispatch }) {
         required
       >
         <option value="">Select time</option>
-        {availableTimes.map((timeOption) => (
-          <option key={timeOption} value={timeOption}>
-            {timeOption}
-          </option>
-        ))}
+        {availableTimes.length > 0 ? (
+          availableTimes.map((timeOption) => (
+            <option key={timeOption} value={timeOption}>
+              {timeOption}
+            </option>
+          ))
+        ) : (
+          <option disabled>No times available</option>
+        )}
       </select>
 
-      {/* Guests Field */}
       <label htmlFor="guests">Number of guests</label>
       <input
         type="number"
@@ -66,7 +63,6 @@ function BookingForm({ availableTimes, dispatch }) {
         required
       />
 
-      {/* Occasion Field */}
       <label htmlFor="occasion">Occasion</label>
       <select
         id="occasion"
@@ -79,11 +75,9 @@ function BookingForm({ availableTimes, dispatch }) {
         <option value="Anniversary">Anniversary</option>
       </select>
 
-      {/* Submit Button */}
       <button type="submit">Make Your Reservation</button>
     </form>
   );
 }
 
 export default BookingForm;
-
