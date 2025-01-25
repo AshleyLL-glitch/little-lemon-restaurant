@@ -4,14 +4,15 @@ import "./BookingPage.css";
 
 function BookingPage() {
   return (
-    <div className="booking-page">
-      <h1>Book Your Table</h1>
+    <main className="booking-page" aria-labelledby="booking-page-heading">
+      <h1 id="booking-page-heading">Book Your Table at Little Lemon</h1>
       <p>
-        Reserve your table at Little Lemon and enjoy a memorable dining experience with your loved ones.
+        Reserve your table at Little Lemon and enjoy a memorable dining experience with your loved ones. Our Mediterranean dishes are crafted with the finest ingredients and served in a warm, welcoming atmosphere.
       </p>
       <BookingForm />
-    </div>
+    </main>
   );
 }
 
 export default BookingPage;
+

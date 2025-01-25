@@ -14,7 +14,8 @@ function initializeTimes() {
 function updateTimes(state, action) {
   switch (action.type) {
     case "UPDATE_TIMES":
-      return fetchAPI(action.payload);
+      const selectedDate = new Date(action.payload);
+      return fetchAPI(selectedDate);
     default:
       return state;
   }
@@ -24,15 +25,10 @@ function App() {
   const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
 
   const submitForm = (formData, navigate) => {
-    try {
-      const success = submitAPI(formData);
-      if (success) {
-        navigate("/confirmed");
-      } else {
-        alert("There was an error. Please try again.");
-      }
-    } catch (error) {
-      console.error("Error during form submission:", error);
+    const success = submitAPI(formData);
+    if (success) {
+      navigate("/confirmed");
+    } else {
       alert("There was an error. Please try again.");
     }
   };
@@ -58,4 +54,5 @@ function App() {
 }
 
 export default App;
+
 

@@ -1,18 +1,33 @@
 .booking-page {
-    text-align: center;
-    padding: 2rem;
-  }
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-  .booking-page h1 {
-    font-family: "Markazi Text", serif;
-    font-size: 36px;
-    color: #495e57;
-    margin-bottom: 1rem;
-  }
+.booking-page h1 {
+  font-family: "Markazi Text", serif;
+  font-size: 2.5rem;
+  color: #495e57;
+  margin-bottom: 1.5rem;
+}
 
-  .booking-page p {
-    font-family: "Karla", sans-serif;
-    font-size: 18px;
-    color: #333333;
-    margin-bottom: 2rem;
-  }
+.booking-page p {
+  font-family: "Karla", sans-serif;
+  font-size: 1.2rem;
+  color: #333333;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.booking-page p:focus,
+.booking-page p:hover {
+  outline: 2px dashed #495e57;
+  outline-offset: 4px;
+}
+
+.booking-page {
+  background-color: #edefee;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
