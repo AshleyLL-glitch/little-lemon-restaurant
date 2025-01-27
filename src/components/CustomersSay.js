@@ -7,36 +7,56 @@ export default function CustomersSay() {
       name: "Emily Jenkins",
       image: "/assets/Emily.jpg",
       rating: 5,
-      review: "Review",
+      review: "The food here is absolutely amazing! Highly recommend.",
     },
     {
       name: "Simon Mitchell",
       image: "/assets/Simon.jpg",
       rating: 4,
-      review: "Review",
+      review: "Great atmosphere and delicious meals. Will visit again!",
     },
     {
       name: "Anya Lewis",
       image: "/assets/Anya.jpeg",
       rating: 5,
-      review: "Review",
+      review: "The best dining experience I've had in a long time.",
     },
   ];
 
   return (
-    <div className="testimonials-container">
-      {testimonials.map((testimonial, index) => (
-        <div key={index} className="testimonial-card">
-          <img
-            src={testimonial.image}
-            alt={testimonial.name}
-            className="testimonial-image"
-          />
-          <h3 className="testimonial-name">{testimonial.name}</h3>
-          <p className="testimonial-rating">Rating {Array(testimonial.rating).fill("⭐").join("")}</p>
-          <p className="testimonial-review">{testimonial.review}</p>
-        </div>
-      ))}
-    </div>
+    <section
+      className="testimonials-container"
+      aria-labelledby="testimonials-title"
+    >
+      <h2 id="testimonials-title" className="testimonials-title">
+        What Our Customers Say
+      </h2>
+      <div className="testimonials-cards">
+        {testimonials.map((testimonial, index) => (
+          <article
+            key={index}
+            className="testimonial-card"
+            aria-label={`Testimonial from ${testimonial.name}`}
+          >
+            <img
+              src={testimonial.image}
+              alt={`Photo of ${testimonial.name}`}
+              className="testimonial-image"
+            />
+            <h3 className="testimonial-name">{testimonial.name}</h3>
+            <p
+              className="testimonial-rating"
+              aria-label={`Rated ${testimonial.rating} out of 5 stars`}
+            >
+              {Array(testimonial.rating)
+                .fill("⭐")
+                .join("")}
+            </p>
+            <p className="testimonial-review">{testimonial.review}</p>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
+

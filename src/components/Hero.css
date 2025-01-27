@@ -1,58 +1,89 @@
-
 .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #495e57;
-    padding: 2rem;
-    color: #edefee;
-  }
-  .hero-text {
-    flex: 1;
-    padding-right: 2rem;
-  }
-  .hero-text h1 {
-    font-family: "Markazi Text", serif;
-    font-size: 64px;
-    font-weight: 500;
-    margin: 0;
-    color: #f4ce14;
-  }
-  .hero-text h2 {
-    font-family: "Markazi Text", serif;
-    font-size: 40px;
-    font-weight: 400;
-    margin: 0.5rem 0;
-  }
-  .hero-text p {
-    font-family: "Karla", sans-serif;
-    font-size: 18px; /* Lead text */
-    font-weight: 400;
-    margin: 1rem 0;
-    color: #edefee;
-  }
-  .hero-button {
-    background-color: #f4ce14;
-    color: #333333;
-    font-family: "Karla", sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .hero-button:hover {
-    background-color: #ee9972;
-  }
-  .hero-image {
-    flex: 1;
-    text-align: right;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #495e57;
+  padding: 2rem;
+  color: #edefee;
+}
+
+.hero-text {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.hero-text h1 {
+  font-family: "Markazi Text", serif;
+  font-size: 64px;
+  font-weight: 500;
+  margin: 0;
+  color: #f4ce14;
+}
+
+.hero-text h2 {
+  font-family: "Markazi Text", serif;
+  font-size: 40px;
+  font-weight: 400;
+  margin: 0.5rem 0;
+}
+
+.hero-text p {
+  font-family: "Karla", sans-serif;
+  font-size: 18px; /* Lead text */
+  font-weight: 400;
+  margin: 1rem 0;
+  color: #edefee;
+}
+
+.hero-button {
+  background-color: #f4ce14;
+  color: #333333;
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero-button:hover {
+  background-color: #ee9972;
+  transform: scale(1.05);
+}
+
+.hero-button:focus {
+  outline: 2px solid #f4ce14;
+  outline-offset: 2px;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: right;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .hero-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+  .hero-text {
+    padding-right: 0;
   }
+
+  .hero-image {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
