@@ -24,6 +24,7 @@ function Nav() {
             to="/"
             className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
             aria-current={location.pathname === "/" ? "page" : undefined}
+            aria-label="Go to Home page"
           >
             Home
           </Link>
@@ -35,6 +36,7 @@ function Nav() {
               location.pathname === "/booking" ? "active" : ""
             }`}
             aria-current={location.pathname === "/booking" ? "page" : undefined}
+            aria-label="Go to Booking page"
           >
             Book a Table
           </Link>
@@ -45,6 +47,5 @@ function Nav() {
 }
 
 export default Nav;
-
 
 

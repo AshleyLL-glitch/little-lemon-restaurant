@@ -3,37 +3,51 @@ import Hero from "./Hero";
 import Specials from "./Specials";
 import CustomersSay from "./CustomersSay";
 import Chicago from "./Chicago";
-import Footer from "./Footer"; // Import the Footer component
+import Footer from "./Footer";
 import "./Homepage.css";
 
 function Homepage() {
   return (
-    <div className="homepage">
+    <main className="homepage">
       {/* Hero Section */}
       <Hero />
 
       {/* Specials Section */}
-      <section className="specials-section">
-        <h2 className="section-title">This Week's Specials!</h2>
+      <section className="specials-section" aria-label="Specials" role="region">
         <Specials />
       </section>
 
       {/* Testimonials Section */}
-      <section className="testimonials-section">
-        <h2 className="section-title">Testimonials</h2>
+      <section
+        className="testimonials-section"
+        aria-labelledby="testimonials-title"
+        role="region"
+      >
+        <h2 id="testimonials-title" className="section-title">
+          Testimonials
+        </h2>
         <CustomersSay />
       </section>
 
       {/* Chicago Section */}
-      <section className="chicago-section">
+      <section
+        className="chicago-section"
+        aria-labelledby="chicago-title"
+        role="region"
+      >
+        <h2 id="chicago-title" className="visually-hidden">
+          About Little Lemon in Chicago
+        </h2>
         <Chicago />
       </section>
 
       {/* Footer Section */}
       <Footer />
-    </div>
+    </main>
   );
 }
 
 export default Homepage;
+
+
 

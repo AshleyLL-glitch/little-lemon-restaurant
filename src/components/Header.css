@@ -1,0 +1,60 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #495e57;
+    color: #edefee;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .header-content {
+    flex: 1;
+  }
+
+  .header-title {
+    font-family: "Markazi Text", serif;
+    font-size: 64px;
+    font-weight: 500;
+    margin: 0;
+    color: #f4ce14;
+  }
+
+  .header-subtitle {
+    font-family: "Karla", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 1rem 0;
+    color: #edefee;
+  }
+
+  .header-button {
+    background-color: #f4ce14;
+    color: #333333;
+    font-family: "Karla", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .header-button:hover,
+  .header-button:focus {
+    background-color: #ee9972;
+    outline: none;
+    outline-offset: 2px;
+  }
+
+  .header-image-container {
+    flex: 1;
+    text-align: right;
+  }
+
+  .header-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }

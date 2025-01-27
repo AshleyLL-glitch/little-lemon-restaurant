@@ -2,14 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 2rem;
   background-color: #ffffff;
   gap: 2rem;
 }
 
 .chicago-text {
-  flex: 1;
+  flex: 1 1 50%;
   max-width: 600px;
 }
 
@@ -26,6 +26,7 @@
   color: #333333;
   margin: 0.5rem 0 1rem;
 }
+
 .chicago-description {
   font-family: "Karla", sans-serif;
   font-size: 1.1rem;
@@ -34,14 +35,16 @@
 }
 
 .chicago-images {
-  flex: 1;
+  flex: 1 1 50%;
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 2rem;
   justify-content: center;
 }
 
 .chicago-image {
-  width: 48%;
+  width: 100%;
+  max-width: 400px;
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -57,9 +60,25 @@
 
 figcaption {
   font-family: "Karla", sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #666666;
   text-align: center;
   margin-top: 0.5rem;
 }
 
+@media (max-width: 768px) {
+  .chicago-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chicago-images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chicago-image {
+    width: 90%;
+    max-width: 500px;
+  }
+}
